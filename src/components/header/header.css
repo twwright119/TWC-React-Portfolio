@@ -1,0 +1,202 @@
+header {
+  height: 110vh;
+  padding: 2rem;
+  /* overflow: hidden; */
+}
+
+.header_container {
+  text-align: center;
+  height: 100%;
+  position: relative;
+}
+
+.header_container > h1 {
+  color: var(--color-primary);
+}
+
+.header_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: flex-end;
+  justify-items: center;
+}
+
+.header_grid > .header_socials {
+  justify-items: flex-start;
+}
+/* =================== CTA =================== */
+
+.cta {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* =================== Social icons =================== */
+.header_socials_media {
+  display: none;
+}
+
+.socials_div {
+  justify-self: start;
+}
+.header_socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.header_socials::after {
+  content: "";
+  width: 1px;
+  height: 2rem;
+  background: var(--color-primary);
+}
+
+/* =================== Typing titles =================== */
+.typewriting {
+  color: #66fcf1;
+  max-width: 512px;
+  white-space: nowrap;
+  margin: 0 auto;
+  overflow: hidden;
+  animation: typing 5s steps(35, end), blink-caret 0.75s step-end infinite;
+  letter-spacing: 0.2em;
+  border-right: 0.15em solid;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #66fcf1;
+  }
+}
+/* =================== Image =================== */
+
+.front-headshot {
+  margin-top: 2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.me {
+  background: linear-gradient(var(--color-primary), transparent);
+  width: 22rem;
+  height: 35rem;
+  left: calc(50% - 11rem);
+  margin-top: 10rem;
+  box-shadow: 0px 0px 100px 10px #45a29e;
+  border-radius: 12rem 9rem 2rem 4rem;
+  animation: liquid 6s ease-in-out infinite;
+}
+
+@keyframes liquid {
+  0% {
+    border-radius: 12rem 9rem 2rem 4rem;
+  }
+  50% {
+    border-radius: 9rem 12rem 4rem 2rem;
+  }
+  100% {
+    border-radius: 12rem 9rem 2rem 4rem;
+  }
+}
+
+/* =================== Scroll Down btn =================== */
+
+.scroll_div {
+  justify-self: end;
+  transform: rotate(90deg);
+  padding-bottom: 1rem;
+}
+.scroll_down {
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+/* ============ Media Query Tablet ============ */
+@media screen and (max-width: 1024px) {
+  header {
+    height: 100vh;
+  }
+  .cta {
+    font-size: 0.9rem;
+  }
+  .me {
+    margin-top: 3rem;
+  }
+  .bitmoji1 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    height: 20rem;
+    width: 20rem;
+  }
+  .header_socials {
+    bottom: -5rem;
+  }
+  .scroll_down {
+    bottom: -3rem;
+  }
+}
+
+/* ============ Media Query Phone ============ */
+@media screen and (max-width: 750px) {
+  header {
+    min-height: 100vh;
+    margin-bottom: 20rem;
+  }
+  .header_container {
+    display: flex;
+    flex-direction: column;
+  }
+  .typewriting {
+    max-width: 320px;
+    font-size: 1.6rem;
+    animation: typing 3.5s steps(24, end), blink-caret 0.75s step-end infinite;
+  }
+
+  .header_socials_media {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .header_socials,
+  .scroll_down {
+    display: none;
+  }
+  .cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+  }
+  .header_grid {
+    grid-template-columns: 1fr;
+    place-items: center;
+  }
+
+  .me {
+    max-width: 18rem;
+    max-height: 30rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  .bitmoji1 {
+    margin-left: auto;
+    margin-right: auto;
+    height: 16rem;
+    width: 16rem;
+  }
+}
